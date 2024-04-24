@@ -1,0 +1,156 @@
+[
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-1234567890",
+    "BookName": "Introduction to Programming",
+    "Author": "Alice Smith",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2023-01-01",
+    "Description": "A comprehensive introduction to programming concepts and fundamentals.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-0987654321",
+    "BookName": "Database Systems",
+    "Author": "Bob Johnson",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2022-05-12",
+    "Description": "An exploration of database design, management, and query languages.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-1111222233",
+    "BookName": "Networking Essentials",
+    "Author": "Charlie Lee",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2021-10-20",
+    "Description": "A guide to computer networks, protocols, and communication technologies.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-3333444455",
+    "BookName": "Data Structures and Algorithms",
+    "Author": "David Miller",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2020-03-14",
+    "Description": "An in-depth exploration of data structures and algorithms used in computer science.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-5555666677",
+    "BookName": "Web Development Essentials",
+    "Author": "Emily Jones",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2019-09-07",
+    "Description": "A guide to web development technologies like HTML, CSS, and JavaScript.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-7777888899",
+    "BookName": "IT Project Management",
+    "Author": "Frank Brown",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2018-12-25",
+    "Description": "Principles and practices for successful IT project management.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-0000111122",
+    "BookName": "Cybersecurity Fundamentals",
+    "Author": "Grace Garcia",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2018-04-11",
+    "Description": "An introduction to cybersecurity concepts, threats, and mitigation strategies.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-2222333344",
+    "BookName": "Cloud Computing Technologies",
+    "Author": "Henry Williams",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2017-07-03",
+    "Description": "An exploration of cloud computing concepts, platforms, and deployment models.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-4444555566",
+    "BookName": "Discrete Mathematics",
+    "Author": "Isla Hernandez",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2016-10-16",
+    "Description": "A foundation in discrete mathematics for computer science applications.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-6666777788",
+    "BookName": "Operating Systems Concepts",
+    "Author": "Jack Moore",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2016-01-29",
+    "Description": "An exploration of operating system concepts, architecture, and functionalities.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-8888999900",
+    "BookName": "Analyzing and Designing",
+    "Author": "Kevin Thomas",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2015-05-12",
+    "Description": "Approaches for analyzing and designing effective information systems.",
+    "Status": true
+  },
+  {
+    "FileName": "starBook.jpg",
+    "ISBN": "978-1011121213",
+    "BookName": "Principles for designing",
+    "Author": "Lily Robinson",
+    "Category": "BSIT",
+    "Language": "English",
+    "PublishedDate": "2014-08-24",
+    "Description": "Principles for designing user-friendly and usable interfaces.",
+    "Status": true
+  },
+  {
+    "FileName": "vintageBook.jpg",
+    "ISBN": "978-1234765890",
+    "BookName": "TemporaryBook",
+    "Author": "Sean Pogi",
+    "Category": "Sci-Fi",
+    "Language": "English",
+    "PublishedDate": "2024-04-18",
+    "Description": "This is a sample of Books",
+    "Status": true
+  },
+  {
+    "FileName": "philosophyBook.jpg",
+    "ISBN": "978-0978542737",
+    "BookName": "Sample Book",
+    "Author": "Ralph",
+    "Category": "Education",
+    "Language": "Germany",
+    "PublishedDate": "2024-04-18",
+    "Description": "Sampke Book",
+    "Status": false
+  }
+]

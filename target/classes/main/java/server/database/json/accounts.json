@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2234485",
+    "username": "2234485@slu.edu.ph",
+    "password": "qwerty",
+    "course": "",
+    "bio": "",
+    "role": "Student",
+    "status": true
+  },
+  {
+    "id": "1234567",
+    "username": "1234567@slu.edu.ph",
+    "password": "librarian",
+    "course": "",
+    "bio": "",
+    "role": "Librarian",
+    "status": true
+  }
+]

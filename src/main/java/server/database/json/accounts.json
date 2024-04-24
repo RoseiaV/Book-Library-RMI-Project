@@ -1,0 +1,20 @@
+[
+  {
+    "id": "7283621",
+    "username": "user1672@solis.edu.ph",
+    "password": "qwerty",
+    "course": "BSIT",
+    "bio": "",
+    "role": "Student",
+    "status": true
+  },
+  {
+    "id": "1234567",
+    "username": "1234567@solis.edu.ph",
+    "password": "librarian",
+    "course": "",
+    "bio": "",
+    "role": "Librarian",
+    "status": true
+  }
+]
