@@ -30,9 +30,27 @@ public class CallbackImplementation extends UnicastRemoteObject implements Clien
         this.transcriptPanel = transcriptPanel;
     }
 
+    //Callback that adds the book to the HomePanel
+    @Override
+    public void updateHomeBook(Books books) throws RemoteException {
+        homeBooks = new homeBooks();
+        homeBooks.getBooknameLabel().setText(books.getBookName());
+        homeBooks.getAuthorLabel().setText(books.getAuthor());
+        homeBooks.getCategoryLabel().setText(books.getCategory());
+        homePanel.getNewBooksPanel().add(homeBooks);
+        homePanel.getNewBooksPanel().repaint();
+        homePanel.getNewBooksPanel().revalidate();
+    }
+
     @Override
     public void updateBook(Books books) throws RemoteException {
-
+        homeBooks = new homeBooks();
+        homeBooks.getBooknameLabel().setText(books.getBookName());
+        homeBooks.getAuthorLabel().setText(books.getAuthor());
+        homeBooks.getCategoryLabel().setText(books.getCategory());
+        libraryPanel.getBooksPanel().add(homeBooks);
+        libraryPanel.getBooksPanel().repaint();
+        libraryPanel.getBooksPanel().revalidate();
     }
 
     @Override

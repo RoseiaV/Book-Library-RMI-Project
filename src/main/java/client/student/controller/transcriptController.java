@@ -58,6 +58,7 @@ public class transcriptController {
                     bookmark = new bookmark();
                     for (Books books : dataAccessClass.getBookList()){
                         if (bookmarks.getBookId().equals(books.getISBN())){
+                            bookmark.getBookISBN().setText(books.getISBN());
                             bookmark.getBooknameLabel().setText(books.getBookName());
                             bookmark.getAuthorLabel().setText(books.getAuthor());
                             bookmark.getCategoryLabel().setText(books.getCategory());
@@ -101,8 +102,11 @@ public class transcriptController {
                             bookmark.getRemoveButton().addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
-                                    //TODO
                                     //Remove the accountId of the user on the bookmark json file
+                                    int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this Bookmark?","Exit Confirmation", JOptionPane.YES_NO_OPTION);
+                                    if (answer == JOptionPane.YES_OPTION){
+                                        model.removeBookmark(new Bookmarks(bookmark.getBookISBN().getText(), application.getUserIdLabel().getText()));
+                                    }
                                 }
                             });
                         }

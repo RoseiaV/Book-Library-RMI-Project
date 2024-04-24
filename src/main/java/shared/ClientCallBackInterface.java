@@ -9,6 +9,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface ClientCallBackInterface extends Remote {
+    void updateHomeBook(Books books) throws RemoteException;
     void updateBook(Books books) throws RemoteException;
     void updateRequestedBook(BooksRequestee booksRequestee) throws RemoteException;
     void updateBorrowedBooks(BooksBorrower booksBorrower) throws RemoteException;

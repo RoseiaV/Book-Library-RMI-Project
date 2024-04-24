@@ -1,5 +1,6 @@
 package client.librarian.model;
 
+import common.Accounts;
 import common.Admin;
 import shared.ClientInterface;
 
@@ -36,9 +37,9 @@ public class AdminFrameModel extends UnicastRemoteObject implements Serializable
         return localDateTime.format(dateTimeFormatter);
     }
 
-    public void logOut(Admin admin){
+    public void logOut(Accounts accounts){
         try {
-            clientInterface.adminLogOut(admin);
+            clientInterface.logOut(accounts);
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

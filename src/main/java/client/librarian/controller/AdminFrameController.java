@@ -94,8 +94,8 @@ public class AdminFrameController {
             String username = view.getUserNameLabel();
             String password = view.getUserPassWordLabel();
 
-            Admin admin = new Admin(username, password);
-            model.logOut(admin);
+            Accounts accounts = new Accounts(null, username, password);
+            model.logOut(accounts);
         });
 
         //For the Exit button on the Frame
@@ -110,8 +110,8 @@ public class AdminFrameController {
                     String username = view.getUserNameLabel();
                     String password = view.getUserPassWordLabel();
 
-                    Admin admin = new Admin(username, password);
-                    model.logOut(admin);
+                    Accounts accounts = new Accounts(null, username, password);
+                    model.logOut(accounts);
                 }
             }
         });

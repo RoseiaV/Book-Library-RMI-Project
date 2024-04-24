@@ -52,8 +52,6 @@ public class ManageLibraryController {
                         setComboBoxSelectedItem(libraryPanel.getAuthorComboBox(), author);
                         setComboBoxSelectedItem(libraryPanel.getCategoryComboBox(), category);
                         setComboBoxSelectedItem(libraryPanel.getLanguageComboBox(), language);
-//                        setStatusComboBoxSelectedItem(libraryPanel.getStatusComboBox(), status);
-
 
                         String fileName = "";
                        // Iterator<Books> booksIterator = ManageLibraryModel.getListOfBooks().listIterator();
@@ -179,7 +177,7 @@ public class ManageLibraryController {
 
         this.libraryPanel.setFileButtonListener(e -> {
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File("src/main/java/admin/res"));
+            fileChooser.setCurrentDirectory(new File("./src/main/java/client/librarian/res"));
             int response = fileChooser.showOpenDialog(null);
             if (response == JFileChooser.APPROVE_OPTION) {
                 System.out.println("Path : " + fileChooser.getSelectedFile().getAbsolutePath());

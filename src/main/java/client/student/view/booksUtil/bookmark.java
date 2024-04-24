@@ -8,6 +8,7 @@ public class bookmark extends JPanel {
     private JLabel booknameLabel;
     private JLabel categoryLabel;
     private JPanel customPanel;
+    private JLabel bookISBN;
     private JLabel jLabel1;
     private JButton removeButton;
     private JButton viewButton;
@@ -25,6 +26,7 @@ public class bookmark extends JPanel {
         categoryLabel = new JLabel();
         removeButton = new JButton();
         viewButton = new JButton();
+        bookISBN = new JLabel();
     }
 
     public void initComponents() {
@@ -81,6 +83,10 @@ public class bookmark extends JPanel {
         viewButton.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0), 3));
         add(viewButton);
         viewButton.setBounds(130, 240, 90, 30);
+    }
+
+    public JLabel getBookISBN() {
+        return bookISBN;
     }
 
     public JButton getRemoveButton() {

@@ -1052,11 +1052,13 @@ public class AdminImplication extends UnicastRemoteObject implements ClientInter
         for (ClientCallBackInterface callback : callbacks) {
             try {
                 callback.updateBook(books);
+                callback.updateHomeBook(books);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
         }
     }
+
 
     private void notifyRequestCallbacks(BooksRequestee booksRequestee){
         for (ClientCallBackInterface callback : callbacks) {
