@@ -134,6 +134,14 @@ public class dataAccessClass extends UnicastRemoteObject implements Serializable
         }
     }
 
+    public void removeBookmark(Bookmarks bookmarks){
+        try {
+            clientInterface.removeClientBookmark(bookmarks);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static Integer[] getDaysInMonth(int month, int year) {
         int daysInMonth;
         if (month == 2) {

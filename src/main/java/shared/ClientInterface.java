@@ -64,6 +64,7 @@ public interface ClientInterface extends Remote {
 
     void addBookRequest(BooksRequestee booksRequestee) throws RemoteException;
     void clientBookMark(Bookmarks bookmarks) throws RemoteException;
+    void removeClientBookmark(Bookmarks bookmarks) throws RemoteException;
 
     void updateBorrowedBooks(BooksBorrower booksBorrower) throws RemoteException;
     void removeBorrowedBook(BooksBorrower booksBorrower) throws RemoteException;

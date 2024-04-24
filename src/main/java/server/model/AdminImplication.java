@@ -154,42 +154,76 @@ public class AdminImplication extends UnicastRemoteObject implements ClientInter
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         if (file.exists()){
             try (Reader reader = new FileReader(file)){
-                List<Bookmarks> bookmarksList1 = gson.fromJson(reader, new TypeToken<List<Bookmarks>>() {}.getType());
-                for (Bookmarks marks : bookmarksList1){
-                    List<String> accountIds = marks.getAccountId();
-                    for (String accID : accountIds){
-                        if (accID.equals(bookmarks.getAccountId())){
+                bookmarksList = gson.fromJson(reader,new TypeToken<List<Bookmarks>>() {}.getType());
 
-                        } else {
-                            System.out.println("Already bookmarked by this client");
-                        }
+                boolean flag = false;
+
+                for (Bookmarks bkm : bookmarksList){
+                    if (bkm.getBookId().equals(bookmarks.getBookId())){ //Check if the BookISBN of account bookmarked is the same
+
+                        //Adds the Account from that Object
+                        bkm.getAccountId().add(bookmarks.getAccId()); //Add the Account from the List of Accounts
+                        flag  = true;
+                        break;
                     }
                 }
+
+                if (!flag){
+                    List<String> newAccountIds = new ArrayList<>();
+                    newAccountIds.add(bookmarks.getAccId());
+                    Bookmarks newBookmark = new Bookmarks(bookmarks.getBookId(), newAccountIds);
+                    bookmarksList.add(newBookmark);
+                }
+
+                try (Writer writer = new FileWriter(file)){
+                    gson.toJson(bookmarksList, writer);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
+    }
 
-//        File file = new File("src/main/java/Server/database/json/bookmark.json"); //File
-//        Gson gson = new GsonBuilder().setPrettyPrinting().create(); //Sets the JSON file to readable
-//        if (file.exists()){ //Checks if the File Exist on the Database Folder
-//            try (Reader reader = new FileReader(file)){
-//                bookmarksList = gson.fromJson(reader, new TypeToken<List<Bookmarks>>(){}.getType());
-//                //booksList = gson.fromJson(reader, new TypeToken<List<Books>>(){}.getType());
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//
-//        bookmarksList.add(bookmarks);
-//        try (Writer writer = new FileWriter(file)){
-//            gson.toJson(bookmarksList, writer);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+    //Method that removes the AccountId from the BookISBN Object
+    @Override
+    public void removeClientBookmark(Bookmarks bookmarks) throws RemoteException {
+        File file = new File("src/main/java/Server/database/json/bookmark.json");
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (Reader reader = new FileReader(file)){
+            bookmarksList = gson.fromJson(reader, new TypeToken<List<Bookmarks>>() {}.getType());
 
+            Bookmarks removeBookmark = null;
+            for (Bookmarks bookmark : bookmarksList){
+                if (bookmark.getBookId().equals(bookmarks.getBookId())){
+                    bookmark.getAccountId().remove(bookmarks.getAccId()); //Remove the AccountId from the List of AccountId's
+
+                    //Checks if there is no accountId left bookmarked on that book
+                    if (bookmark.getAccountId().isEmpty()){
+                        removeBookmark = bookmark;
+                    }
+                    break;
+                }
+            }
+
+            if (removeBookmark != null){
+                bookmarksList.remove(removeBookmark); //Removes the Bookmark from the List of Bookmarks
+            }
+
+            try (Writer writer = new FileWriter(file)){
+                gson.toJson(bookmarksList, writer);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

@@ -2,6 +2,7 @@ package client.student.controller;
 
 import client.student.view.*;
 import client.student.model.*;
+import common.Bookmarks;
 import common.BooksRequestee;
 
 import javax.swing.*;
@@ -59,12 +60,14 @@ public class viewBookController {
         this.viewBook.setBookmarkButtonListener( e -> {
             if (viewBook.getBookmarkButton().isSelected()){
                 System.out.println("Bookmarked");
-                //TODO
+
                 //Add the current LoggedIn accountId of user to the bookmark.json in the server
+                model.bookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
             } else {
                 System.out.println("Un-Bookmarked");
-                //TODO
+
                 //Remove the current LoggedIn accountId of user to the bookmark.json in the server
+                model.removeBookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
             }
         });
 
