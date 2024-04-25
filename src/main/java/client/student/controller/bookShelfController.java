@@ -30,7 +30,7 @@ public class bookShelfController {
         int w = bookShelfPanel.getBorrowedBookPanel().getWidth();
         if (model.ifBorrowerContains(applicationFrame.getUserIdLabel().getText())){
             for (BooksBorrower booksBorrower : dataAccessClass.getBooksBorrowerList()){
-                if (booksBorrower.getAccountId().equals(applicationFrame.getUserIdLabel())){
+                if (booksBorrower.getAccountId().equals(applicationFrame.getUserIdLabel().getText())){
 
                     borrowed = new borrowedBook();
                     borrowed.getReturnDateLabel().setText(booksBorrower.getReturnDate());
@@ -58,7 +58,7 @@ public class bookShelfController {
         int w = bookShelfPanel.getRequestedBookPanel().getWidth();
 
         for (BooksRequestee booksRequestee : dataAccessClass.getBooksRequesteeList()){
-            if (booksRequestee.getAccountId().equals(applicationFrame.getUserIdLabel())) {
+            if (booksRequestee.getAccountId().equals(applicationFrame.getUserIdLabel().getText())) {
                 for (int i = 0; i < 3; i++) {
                     bookShelfPanel.getRequestedBookPanel().setPreferredSize(new Dimension(w, 195));
                     w = w + 690;
@@ -67,6 +67,8 @@ public class bookShelfController {
                 requested = new requestedBook();
                 requested.getReturnDateLabel().setText(booksRequestee.getRequestDate());
                 bookShelfPanel.getRequestedBookPanel().add(requested);
+
+
                 System.out.println(booksRequestee.toString());
 
                 for (Books books : dataAccessClass.getBookList()){

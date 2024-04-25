@@ -169,14 +169,15 @@ public class ReadMeApplication {
 
             //homePanel.getWelcomingLabel().setText("WELCOME " + accounts.getUsername()); //Sets the welcoming message on the homepage
 
-            CallbackImplementation callbackImplementation = new CallbackImplementation(homePanel, libraryPanel, transcriptPanel);
-            clientInterface.registerCallBack(callbackImplementation); //Register the Callback
+
             homeController homeController = new homeController(application, homePanel,viewBook, model);
             applicationController applicationController = new applicationController(application, homePanel, libraryPanel, bookShelfPanel, transcriptPanel, model, applicationModel);
             libraryController libraryController = new libraryController(application, libraryPanel, viewBook, model);
             viewBookController viewBookController = new viewBookController(application,libraryPanel, viewBook, model);
             bookShelfController bookShelfController = new bookShelfController(application, bookShelfPanel, model);
             transcriptController transcriptController = new transcriptController(application,viewBook, transcriptPanel, model);
+            CallbackImplementation callbackImplementation = new CallbackImplementation(transcriptController, application, homePanel, libraryPanel, transcriptPanel, viewBook, model);
+            clientInterface.registerCallBack(callbackImplementation); //Register the Callback
         } catch (RemoteException e) {
             JOptionPane.showMessageDialog(null, "System Error!");
         }

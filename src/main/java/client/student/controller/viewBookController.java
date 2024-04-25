@@ -57,19 +57,19 @@ public class viewBookController {
         this.viewBook.setYearComboBoxItemListener( e -> { updateDayComboBox();});
 
         //BookMark ItemListener
-        this.viewBook.setBookmarkButtonListener( e -> {
-            if (viewBook.getBookmarkButton().isSelected()){
-                System.out.println("Bookmarked");
-
-                //Add the current LoggedIn accountId of user to the bookmark.json in the server
-                model.bookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
-            } else {
-                System.out.println("Un-Bookmarked");
-
-                //Remove the current LoggedIn accountId of user to the bookmark.json in the server
-                model.removeBookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
-            }
-        });
+//        this.viewBook.setBookmarkButtonListener( e -> {
+//            if (viewBook.getBookmarkButton().isSelected()){
+//                System.out.println("Bookmarked");
+//
+//                //Add the current LoggedIn accountId of user to the bookmark.json in the server
+//                model.bookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
+//            } else {
+//                System.out.println("Un-Bookmarked");
+//
+//                //Remove the current LoggedIn accountId of user to the bookmark.json in the server
+//                model.removeBookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
+//            }
+//        });
 
     }
 

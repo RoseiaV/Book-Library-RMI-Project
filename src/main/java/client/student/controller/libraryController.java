@@ -3,6 +3,7 @@ package client.student.controller;
 import client.student.model.dataAccessClass;
 import client.student.view.*;
 import client.student.view.booksUtil.*;
+import common.Bookmarks;
 import common.Books;
 
 import javax.imageio.ImageIO;
@@ -109,6 +110,23 @@ public class libraryController {
                     viewBook.getBookPublishedDate().setText(books.getPublishedDate());
                     viewBook.getBookDescrption().setText(books.getDescription());
                     viewBook.getBookStatus().setText(Status);
+
+                    viewBook.getBookmarkButton().addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            if (viewBook.getBookmarkButton().isSelected()){
+                                System.out.println("Bookmarked");
+
+                                //Add the current LoggedIn accountId of user to the bookmark.json in the server
+                                model.bookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
+                            } else {
+                                System.out.println("Un-Bookmarked");
+
+                                //Remove the current LoggedIn accountId of user to the bookmark.json in the server
+                                model.removeBookmark(new Bookmarks(viewBook.getBookISBN().getText(), application.getUserIdLabel().getText()));
+                            }
+                        }
+                    });
                 }
             });
             libraryPanel.getBooksPanel().add(homeBooks);

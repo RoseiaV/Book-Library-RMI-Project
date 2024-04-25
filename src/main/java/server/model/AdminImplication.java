@@ -181,6 +181,7 @@ public class AdminImplication extends UnicastRemoteObject implements ClientInter
                     throw new RuntimeException(e);
                 }
 
+                clientBookmark(bookmarks);
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
@@ -219,10 +220,35 @@ public class AdminImplication extends UnicastRemoteObject implements ClientInter
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            //Remove Bookmark
+            removeClientBookmark();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    //Callback to reflect the bookmark
+    public void clientBookmark(Bookmarks bookmarks){
+        for (ClientCallBackInterface callBackInterface : callbacks){
+            try {
+                callBackInterface.clientBookmark(bookmarks);
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    //Callback to refresh the bookmarks
+    public void removeClientBookmark(){
+        for (ClientCallBackInterface callBackInterface : callbacks){
+            try {
+                callBackInterface.refreshBookmark();
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
